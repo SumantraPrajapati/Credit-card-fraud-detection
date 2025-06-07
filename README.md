@@ -29,8 +29,8 @@ Make sure you have the following installed:
   Step 1: Clone the Repository (ya ZIP extract karo)
 
 ```bash
-git clone https://github.com/your-username/credit-card-fraud-detector.git
-cd credit-card-fraud-detector
+git clone https://github.com/SumantraPrajapati/Credit-card-fraud-detection.git
+cd credit-card-fraud-detection
 ```
 
 Agar ZIP file download ki hai:
