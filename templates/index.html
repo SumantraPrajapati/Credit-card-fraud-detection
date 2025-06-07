@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Credit Card Fraud Detection Form</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(120deg, #1f1c2c, #928dab);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    form {
+      background: #ffffff10;
+      backdrop-filter: blur(10px);
+      padding: 30px 40px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      color: #fff;
+      min-width: 350px;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 28px;
+      color: #f0f0f0;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: 500;
+      color: #f8f8f8;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 6px;
+      border: none;
+      border-radius: 8px;
+      font-size: 15px;
+      background: #ffffff20;
+      color: #fff;
+      outline: none;
+      transition: background 0.3s;
+    }
+
+    input:focus, select:focus {
+      background: #ffffff35;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      margin-top: 25px;
+      background: #00c9ff;
+      border: none;
+      border-radius: 10px;
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.4s ease;
+    }
+
+    button:hover {
+      background: #007ab3;
+    }
+
+    .result {
+      margin-top: 20px;
+      text-align: center;
+      font-size: 18px;
+      font-weight: bold;
+      color: #fff;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <form action="/predict" method="POST">
+    <h2>🚨Credit Card Fraud Detection</h2>
+
+    <label for="amount">💰 Amount</label>
+    <input type="number" name="amount" required>
+
+    <label for="oldbalanceOrg">🏦 Sender Old Balance</label>
+    <input type="number" name="oldbalanceOrg" required>
+
+    <label for="oldbalanceDest">🏦 Receiver Old Balance</label>
+    <input type="number" name="oldbalanceDest" required>
+
+    <label for="type">🔁 Transaction Type</label>
+    <select name="type" required>
+      <option value="TRANSFER">TRANSFER</option>
+      <option value="CASH_OUT">CASH_OUT</option>
+      <option value="DEBIT">DEBIT</option>
+      <option value="PAYMENT">PAYMENT</option>
+    </select>
+
+    <button type="submit">🔍 Check Transaction</button>
+
+    {% if prediction_text %}
+      <div class="result">{{ prediction_text }}</div>
+    {% endif %}
+  </form>
+</body>
+</html>
