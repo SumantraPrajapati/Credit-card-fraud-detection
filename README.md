@@ -39,7 +39,7 @@ Agar ZIP file download ki hai:
 * Open the folder in terminal or command prompt
 
 
- 🐍 Step 2: Create a Virtual Environment (Recommended)
+  Step 2: Create a Virtual Environment (Recommended)
 
 ```bash
 python -m venv venv
@@ -59,13 +59,13 @@ venv\Scripts\activate
 source venv/bin/activate
 ```
 
-### 📦 Step 3: Install Dependencies
+###  Step 3: Install Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 🤖 Step 4: Run the Flask App
+###  Step 4: Run the Flask App
 
 ```bash
 python app.py
@@ -85,7 +85,7 @@ Running on http://127.0.0.1:5000/
 
 
 
-### 🌐 Step 5: Open in Browser
+###  Step 5: Open in Browser
 
 Go to:
 
@@ -97,7 +97,7 @@ Enter your transaction details, and see whether it predicts the transaction as *
 
 
 
-### 📌 Note
+###  Note
 
 * Ensure `model.pkl` file is in the same folder as `app.py`
 * If you face any `ModuleNotFoundError`, use `pip install` to fix it.
